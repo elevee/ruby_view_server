@@ -1,5 +1,5 @@
 <% def linkto(name,url)
-    return "<a href='#{url}'>#{name}" 
+    return "<a href='#{url}'>#{name}</a>" 
     end%>
 
 <html>
@@ -7,10 +7,28 @@
     <h1>Layout McGee</h1>
     <marquee>SUP SUP SUP SUP suuuuuuuuuup 
   SUUUUPP!</marquee>
+
+    <form method='post' action="<%= @request.path %>">
+    First name: <input type="text" name="first_name" placeholder='first name'/><br />
+    Vegetarian?: <input type="checkbox" name="vegetarian">
+    Vegan?: <input type="checkbox" name="vegan"><br>
+    <input type="submit" value="Submit" />
+    
+    </form>
+
+    <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+            Hiya, <%= @request.query['first_name'] %>
+          <% else %>
+            Enter your name. Do it.
+          <% end %>
+
     <p>
       <h3>We layin OUT</h3>
       <p>Got the sunscreen on.</p>
+
       <a href='me.html'>Me</a>
+
+
 
     </p>
     <hr />
@@ -22,6 +40,12 @@
       <h3>Footer McDugal</h3>
       <p>Copyright / Terms of Service</p>
       <p>Here's a link to my album <%= linkto('Coffee Stain', 'http://www.coffeestain.com') %></p>
+
+      <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+  Hello there <%= @request.query['first_name'] %>
+<% else %>
+  Enter thy name
+<% end %>
     </div>
 
   </body>
