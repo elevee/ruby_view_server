@@ -1,9 +1,15 @@
+<% def linkto(name,url)
+    return "<a href='#{url}'>#{name}" 
+    end%>
+
 <html>
   <body>
-    <h1>You're using a layout</h1>
+    <h1>Layout McGee</h1>
+    <marquee>SUP SUP SUP SUP suuuuuuuuuup 
+  SUUUUPP!</marquee>
     <p>
-      <h3> I'm a header</h3>
-      <p>Put things in the header</p>
+      <h3>We layin OUT</h3>
+      <p>Got the sunscreen on.</p>
       <a href='me.html'>Me</a>
 
     </p>
@@ -13,8 +19,10 @@
     </div>
     <hr />
     <div>
-      <h3> I'm a footer</h3>
-      <p>Put things in the footer</p>
+      <h3>Footer McDugal</h3>
+      <p>Copyright / Terms of Service</p>
+      <p>Here's a link to my album <%= linkto('Coffee Stain', 'http://www.coffeestain.com') %></p>
     </div>
+
   </body>
 </html>
